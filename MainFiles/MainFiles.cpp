@@ -2,8 +2,26 @@
 //
 
 #include <iostream>
+#include "log.h"
+
+const int POSITION = 10;
+const int ALREADY_CONPUTED = 3;
 
 using namespace std;
+
+//exercise 4 function: Finds the tenth fibonacci number using both local and global variables
+void print_tenth_fibonacci() {
+    int n_1 = 1;
+    int n_2 = 0;
+    int current = n_1 + n_2;
+
+    for (int i = ALREADY_CONPUTED; i < POSITION; ++i) {
+        n_2 = n_1;
+        n_1 = current;
+        current = n_1 + n_2;
+    }
+    cout << current << endl;
+}
 
 int main()
 {
@@ -52,6 +70,13 @@ int main()
 
     }
     */
+
+    //exercise 3: calling a function from main()
+    //log();
+
+    //exercise 4: Using local and global variables in a fibonacci sequence
+    cout << "Computing the 10th fibonacci number" << endl;
+    print_tenth_fibonacci();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
